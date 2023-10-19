@@ -44,11 +44,11 @@ const updateWorkshops = () => {
   employeeSelect.disabled = true;
 
   if (cityValue) {
-    const filteredWorkshops = workshops.filter(function(workshop) {
+    const filteredWorkshops = workshops.filter((workshop) => {
       return workshop.city === cityValue;
     });
 
-    filteredWorkshops.forEach(function(workshop) {
+    filteredWorkshops.forEach((workshop) => {
       const option = document.createElement('option');
       option.value = workshop.value;
       option.textContent = workshop.label;
@@ -67,11 +67,11 @@ const updateEmployees = () => {
   employeeSelect.disabled = true;
 
   if (workshopValue) {
-    const filteredEmployees = employees.filter(function(employee) {
+    const filteredEmployees = employees.filter((employee) => {
       return employee.workshop === workshopValue;
     });
 
-    filteredEmployees.forEach(function(employee) {
+    filteredEmployees.forEach((employee) => {
       const option = document.createElement('option');
       option.value = employee.value;
       option.textContent = employee.label;
@@ -100,7 +100,7 @@ const getShiftByTime = (time) => {
   }
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const brigadeSelect = document.getElementById('brigade');
 
   const updateBrigade = () => {
