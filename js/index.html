@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Чистая форма</title>
+  <style>
+    select {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <form>
+      <label for="city">Город:</label>
+      <select id="city" onchange="updateWorkshops()">
+        <option value="">Выберите город</option>
+      </select>
+
+      <label for="workshop">Цех:</label>
+      <select id="workshop" onchange="updateEmployees()" disabled>
+        <option value="">Выберите цех</option>
+      </select>
+
+      <label for="employee">Сотрудник:</label>
+      <select id="employee" disabled>
+        <option value="">Выберите сотрудника</option>
+      </select>
+
+      <label for="brigade">Бригада:</label>
+      <select id="brigade" disabled>
+        <option value="brigade1">Бригада 1</option>
+        <option value="brigade2">Бригада 2</option>
+      </select>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

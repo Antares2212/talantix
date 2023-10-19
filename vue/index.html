@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue.js форма</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+</head>
+<body>
+  <div id="app">
+    <form>
+      <label for="city">Город:</label>
+      <select id="city" v-model="selectedCity" @change="updateWorkshops">
+        <option value="">Выберите город</option>
+        <option v-for="city in cities" :key="city.value" :value="city.value">{{ city.label }}</option>
+      </select>
+
+      <label for="workshop">Цех:</label>
+      <select id="workshop" v-model="selectedWorkshop" @change="updateEmployees" :disabled="!selectedCity">
+        <option value="">Выберите цех</option>
+        <option v-for="workshop in filteredWorkshops" :key="workshop.value" :value="workshop.value">{{ workshop.label }}</option>
+      </select>
+
+      <label for="employee">Сотрудник:</label>
+      <select id="employee" v-model="selectedEmployee" :disabled="!selectedWorkshop">
+        <option value="">Выберите сотрудника</option>
+        <option v-for="employee in filteredEmployees" :key="employee.value" :value="employee.value">{{ employee.label }}</option>
+      </select>
+
+      <label for="brigade">Бригада:</label>
+      <select id="brigade" v-model="selectedBrigade" :disabled="!selectedEmployee">
+        <option value="brigade1">Бригада 1</option>
+        <option value="brigade2">Бригада 2</option>
+      </select>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
